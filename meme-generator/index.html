@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top-bar">
+      <button type="button" class="btn-upload" id="upload-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        Upload
+      </button>
+      <input type="file" id="image-input" accept="image/*" hidden>
+    </header>
+
+    <section class="canvas-area">
+      <div class="canvas-container">
+        <canvas id="canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="bottom-panel">
+      <div class="panel-section edit-text">
+        <h3>EDIT TEXT</h3>
+        <input type="text" id="meme-text" placeholder="Select a text box to edit...">
+        <div class="size-control">
+          <label for="font-size">SIZE</label>
+          <div class="slider-row">
+            <input type="range" id="font-size" min="16" max="120" value="74">
+            <span id="font-size-value">74</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section text-border">
+        <h3>TEXT BORDER</h3>
+        <div class="color-row">
+          <div class="color-swatch" id="text-swatch" title="Text color"></div>
+          <span>TEXT</span>
+          <div class="color-swatch" id="border-swatch" title="Border color"></div>
+          <span>BORDER</span>
+        </div>
+      </div>
+
+      <div class="panel-section text-boxes">
+        <h3>TEXT BOXES</h3>
+        <p id="text-box-count">No text boxes</p>
+        <button type="button" class="btn-download" id="download-btn" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
