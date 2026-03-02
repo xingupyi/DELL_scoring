@@ -10,13 +10,11 @@ class Settings(BaseSettings):
 
     app_name: str = Field(default="Distress Scoring MVP", alias="APP_NAME")
 
-    database_url: str = Field(
-        default="sqlite:///./distress.db",
-        alias="DATABASE_URL",
-        description="SQLAlchemy database URL",
-    )
+    database_url: str = Field(default="sqlite:///./distress.db", alias="DATABASE_URL")
 
-    vertex_project_id: str = Field(alias="VERTEX_PROJECT_ID")
+    # Defaults make local dev & tests work without env vars;
+    # production can override via environment variables.
+    vertex_project_id: str = Field(default="test-project", alias="VERTEX_PROJECT_ID")
     vertex_location: str = Field(default="us-central1", alias="VERTEX_LOCATION")
     vertex_model_name: str = Field(
         default="gemini-1.5-pro",
